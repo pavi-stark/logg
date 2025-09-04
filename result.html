@@ -4,15 +4,13 @@
   <title>Result Page</title>
 </head>
 <body style="font-family: Arial; text-align: center; margin-top: 50px;">
-  <h2>User Information</h2>
+  <h2>Stored User Info (Demo Only)</h2>
   <p><b>Username:</b> <span id="showUsername"></span></p>
   <p><b>Password:</b> <span id="showPassword"></span></p>
 
   <script>
-    // Get data from URL parameters
-    const params = new URLSearchParams(window.location.search);
-    document.getElementById("showUsername").textContent = params.get("username");
-    document.getElementById("showPassword").textContent = params.get("password");
+    document.getElementById("showUsername").textContent = localStorage.getItem("username") || "Not provided";
+    document.getElementById("showPassword").textContent = localStorage.getItem("password") || "Not provided";
   </script>
 </body>
 </html>
